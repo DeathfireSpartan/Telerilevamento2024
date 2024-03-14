@@ -40,19 +40,33 @@ plot(b4, col=clg)
 b8 <- im.import("sentinel.dolomites.b8.tif") 
 plot(b8, col=clg)
 
-# multiframe
+# Voglio mettere tutte le bande insieme in un unico plot --> multiframe
+# Funzione par(mfrow=c(righe,colonne)) --> 2 righe e 2 colonne --> par(mfrow=c(2,2))
 par(mfrow=c(2,2))
-plot(b2, col=cl)
-plot(b3, col=cl)
-plot(b4, col=cl)
-plot(b8, col=cl)
+plot(b2, col=clg)
+plot(b3, col=clg)
+plot(b4, col=clg)
+plot(b8, col=clg)
 
-# stack images
+# Esercizio: plottare le 4 bande in una singola riga
+par(mfrow=c(1,4))
+plot(b2, col=clg)
+plot(b3, col=clg)
+plot(b4, col=clg)
+plot(b8, col=clg)
+
+# Considero le immagini come facenti parte di un unico array
 stacksent <- c(b2, b3, b4, b8)
-dev.off() # it closes devices
-plot(stacksent, col=cl)
+plot(stacksent, col=clg)
 
-plot(stacksent[[4]], col=cl)
+# Plotto solo un elemento specifico dell'array --> selezione l'elemento con la parentesi quadre
+# Uso 2 parentesi quadre perchè sto lavorando con una matrice
+# Plotto solo il quarto elemento --> banda 8
+plot(stacksent[[4]], col=clg)
+
+# Anniento l'immagine precedente --> dev.off()
+# Cancello il comando par() precedente
+dev.off()
 
 # Exercise: plot in a multiframe the bands with different color ramps
 par(mfrow=c(2,2))
