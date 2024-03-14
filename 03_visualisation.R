@@ -1,6 +1,6 @@
 # Visualizzazione di dati satellitari in R usando imageRy
 # Pacchetto terra
-# Pacchetto imageRy
+# Pacchetto imageRy --> informazioni sul Github del prof (basta cercare imageRy e scaricare il pdf)
 
 library(imageRy)
 library(terra)
@@ -12,21 +12,33 @@ im.list()
 
 # Funzione per importare/utilizzare uno dei dati all'interno della lista --> im.import("nomedato")
 mato <- im.import("matogrosso_ast_2006209_lrg.jpg")
+b2 <- im.import("sentinel.dolomites.b2.tif") # Immagine composta da tante bande (tanti sensori per ogni lunghezza d'onda)
 
-cl <- colorRampPalette(c("black", "grey", "light grey")) (100)
-plot(b2, col=cl)
+# Voglio plottare i dati
+plot(mato)
 
-# import the green band from Sentinel-2 (band 3)
+# Voglio cambiare la scala dei colori (scala dei grigi) --> colorRampPalette(c("nomecolore1", "nomecolore2", "...")) (valore sfumatura)
+# c() serve per concatenare e creare così l'array
+# Tra parentesi il numero indica la sfumatura al passaggio da un colore all'altro
+clg <- colorRampPalette(c("black", "grey", "lightgrey")) (1000)
+
+# Plotto b2 con il colore che ho scelto in clg
+plot(b2, col=clg)
+
+# La roccia riflette tutte le bande colorate, mentre la vegetazione assorbe tutta la lunghezza d'onda del blu (per il processo di fotosintesi)
+
+# Importo le bande addizionali
+# Importo la banda verde del Sentinel-2 (banda 3)
 b3 <- im.import("sentinel.dolomites.b3.tif") 
-plot(b3, col=cl)
+plot(b3, col=clg)
 
-# import the red band from Sentinel-2 (band 4)
+# Importo la banda rossa del Sentinel-2 (banda 4)
 b4 <- im.import("sentinel.dolomites.b4.tif") 
-plot(b4, col=cl)
+plot(b4, col=clg)
 
-# import the NIR band from Sentinel-2 (band 8)
+# Importo la banda del vicino infrarosso NIR del Sentinel-2 (banda 8)
 b8 <- im.import("sentinel.dolomites.b8.tif") 
-plot(b8, col=cl)
+plot(b8, col=clg)
 
 # multiframe
 par(mfrow=c(2,2))
