@@ -68,7 +68,7 @@ plot(stacksent[[4]], col=clg)
 # Cancello il comando par() precedente
 dev.off()
 
-# RGB plotting
+# Plottaggio RGB
 # b2 --> banda del blu --> stacksent[[1]]=b2=blu
 # b3 --> banda del verde --> stacksent[[2]]=b3=verde
 # b4 --> banda del rosso --> stacksent[[3]]=b4=rosso
@@ -76,11 +76,12 @@ dev.off()
 
 # Funzione im.plotRGB(immagine, rosso, verde, blu), vado ad associare ad ogni banda un colore e quindi un numero (3,2,1)
 im.plotRGB(stacksent,3,2,1) #3=rosso, 2=verde, blu=1
+
 # Al posto del rosso e quindi di 3 nel codice mettiamo la banda dell'infrarosso vicino che è 4
 im.plotRGB(stacksent,4,2,1) # dall'immagine si vede meglio la vegetazione, l'infrarosso potenzia la visione
 im.plotRGB(stacksent, 4, 3, 1) # Ho cambiato anche il verde, ma sarà praticamente uguale all'immagine precedente. L'infrarosso è quello che si nota meglio
-im.plotRGB(stacksent, 3, 4, 2) # Sostituisco all'infrarosso il verde
-im.plotRGB(stacksent, 3, 2, 4) # Sostituisco all'infrarosso il blu
+im.plotRGB(stacksent, 3, 4, 2) # Sostituisco l'infrarosso al verde
+im.plotRGB(stacksent, 3, 2, 4) # Sostituisco l'infrarosso al blu
 
 # Esercizio: plotta le 4 immagini precedenti in una matrice
 par(mfrow=c(2,2))
