@@ -74,10 +74,20 @@ dev.off()
 # b4 --> banda del rosso --> stacksent[[3]]=b4=rosso
 # b8 --> banda del infrarosso vicino --> stacksent[[4]]=b8=infrarosso vicino
 
-# funzione im.plotRGB(immagine), vado ad associare ad ogni banda un colore e quindi un numero (3,2,1)
+# Funzione im.plotRGB(immagine, rosso, verde, blu), vado ad associare ad ogni banda un colore e quindi un numero (3,2,1)
 im.plotRGB(stacksent,3,2,1) #3=rosso, 2=verde, blu=1
-#al posto del rosso e quindi di 3 nel codice mettiamo la banda dell'infrarosso vicino che è 4
+# Al posto del rosso e quindi di 3 nel codice mettiamo la banda dell'infrarosso vicino che è 4
 im.plotRGB(stacksent,4,2,1) # dall'immagine si vede meglio la vegetazione, l'infrarosso potenzia la visione
+im.plotRGB(stacksent, 4, 3, 1) # Ho cambiato anche il verde, ma sarà praticamente uguale all'immagine precedente. L'infrarosso è quello che si nota meglio
+im.plotRGB(stacksent, 3, 4, 2) # Sostituisco all'infrarosso il verde
+im.plotRGB(stacksent, 3, 2, 4) # Sostituisco all'infrarosso il blu
+
+# Esercizio: plotta le 4 immagini precedenti in una matrice
+par(mfrow=c(2,2))
+im.plotRGB(stacksent, 3, 2, 1) # Colori naturali
+im.plotRGB(stacksent, 4, 2, 1) # Infrarosso sul rosso
+im.plotRGB(stacksent, 3, 4, 2) # Infrarosso sul verde
+im.plotRGB(stacksent, 3, 2, 4) # Infrarosso sul blu
 
 # Exercise: plot in a multiframe the bands with different color ramps
 par(mfrow=c(2,2))
