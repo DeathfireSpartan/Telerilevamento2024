@@ -47,3 +47,37 @@ im.plotRGB(m2006, 1, 2, 3) # nir sul rosso 2006
 im.plotRGB(m2006, 2, 1, 3) # nir sul verde 2006
 im.plotRGB(m2006, 2, 3, 1) # nir sul blu 2006
 
+# Calcolo del DVI (Difference Vegetation Index)
+# L'indice varia tra 255 e -255 (perchè ogni pixel è pari a 2^8 = 256)
+# Prendo la banda dell'infrarosso 1 e sottraggo quella del rosso 2
+dvi1992 = m1992[[1]] - m1992[[2]]
+
+# Palette di colori e plot
+cl <- colorRampPalette(c("darkblue", "yellow", "red", "black")) (100)
+plot(dvi1992, col=cl)
+
+# Calcolo il DVI del 2006 e lo plotto
+m2006 <- im.import("matogrosso_ast_2006209_lrg.jpg")
+dvi2006 = m2006[[1]] - m2006[[2]]
+plot(dvi2006, col=cl)
+
+# Ex: PLottare il DVI del 1992 accanto a quello del 2006
+par(mfrow=c(1,2))
+plot(dvi1992, col=cl)
+plot(dvi2006, col=cl)
+
+# Facciamo una normalizzazione --> NDVI (Normalise Difference Vegetation Index) --> NDVI = (NIR - RED) / (NIR + RED) --> 
+# (255-0)/(255+0) = 1 e (0-255)/(0-255) = -1 
+# NDVI varia da 1 a -1
+ndvi1992 = dvi1992 / (m1992[[1]] + m1992[[2]])
+ndvi2006 = dvi2006 / (m2006[[1]] + m2006[[2]])
+
+# Plotto gli NDVI
+dev.off()
+par(mfrow=c(1,2))
+plot(ndvi1992, col=cl)
+plot(ndvi2006, col=cl)
+
+# Funzione per fare tutto questo + velocemente
+# im.dvi(immagine, 1, 2) e im.ndvi(immagine, 1, 2) --> Sono indicate le bande del NIR e del rosso
+matodvi <- im.dvi("matogrosso_ast_2006209_lrg.jpg", 1, 2)
