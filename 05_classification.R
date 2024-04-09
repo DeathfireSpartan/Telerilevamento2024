@@ -1,42 +1,45 @@
-# quantifying land cover change
+# Quantificare la variabilità della copertura del suolo
 
-# intsall.packages("ggplot2")
-# intsall.packages("patchwork")
+# Installo pacchetti nuovi
+# install.packages("ggplot2")
+# install.packages("patchwork")
 
 library(terra)
 library(imageRy)
 library(ggplot2)
 library(patchwork)
 
+# La solita lista di immagini
 im.list()
 
 # https://www.esa.int/ESA_Multimedia/Images/2020/07/Solar_Orbiter_s_first_views_of_the_Sun6
 # additional images: https://webbtelescope.org/contents/media/videos/1102-Video?Tag=Nebulas&page=1
 
-# importing images
+# Importo l'immagine
 sun <- im.import("Solar_Orbiter_s_first_views_of_the_Sun_pillars.jpg")
 
-# classifying images
+# Classifico le immagini --> im.classify() --> richiede l'immagine originale e il numero di cluster/classi che secondo noi sono valide
 sunc <- im.classify(sun, num_clusters=3)
 
-# importing Mato grosso images
+# Importo le immagini del Mato Grosso
 m1992 <- im.import("matogrosso_l5_1992219_lrg.jpg")
 m2006 <- im.import("matogrosso_ast_2006209_lrg.jpg")
 
-# classifying images
+# Classifico le immagini
 m1992c <- im.classify(m1992, num_clusters=2)
 
 # 1992
-# class 1 = human
-# class 2 = forest
+# Le classi possono essere invertite
+# classe 1 = foresta
+# classe 2 = umani
 
 m2006c <- im.classify(m2006, num_clusters=2)
 
 # 2006
-# class 1 = human
-# class 2 = forest
+# classe 1 = foresta
+# classe 2 = umani
 
-# frequencies
+# Frequenzefi
 f1992 <- freq(m1992c)
 
 # proportions
