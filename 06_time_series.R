@@ -54,7 +54,7 @@ difg <- stackg[[1]] - stackg[[4]]
 plot(difg, col=cldif)
 
 # Esercizio: fare un plot RGB sui diversi anni
-im.plotRGB(stackg, r=1, g=2, b=3)
+im.plotRGB(stackg, r=1, g=2, b=4) # g2000 sul rosso, g2005 sul verde e g2015 sul blu
 
 
 
