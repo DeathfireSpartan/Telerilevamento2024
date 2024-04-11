@@ -26,13 +26,14 @@ difEN = EN01[[1]] - EN13[[1]]
 cldif <- colorRampPalette(c("blue", "white", "red")) (100)
 plot(dif, col=cldif)
 
-
-### New example: temperature in Greenland
+# Es. Tempereature in Groenlandia
 
 g2000 <- im.import("greenland.2000.tif")
 clg <- colorRampPalette(c("black", "blue", "white", "red")) (100)
+# Il nero rappresenta la parte più fredda
 plot(g2000, col=clg)
 
+# Importo le altre immagini
 g2005 <- im.import("greenland.2005.tif")
 g2010 <- im.import("greenland.2010.tif")
 g2015 <- im.import("greenland.2015.tif")
@@ -43,16 +44,16 @@ par(mfrow=c(1,2))
 plot(g2000, col=clg)
 plot(g2015, col=clg)
 
-# stacking the data
+# Faccio lo stacking dei dati
 stackg <- c(g2000, g2005, g2010, g2015)
 plot(stackg, col=clg)
 
-# Exercise: make the differencxe between the first and the final elemnts of the stack
+# Esercizio: differenza tra la prima e la quarta immagine
 difg <- stackg[[1]] - stackg[[4]]
-# difg <- g2000 - g2015
+# Plotto
 plot(difg, col=cldif)
 
-# Exercise: make a RGB plot using different years
+# Esercizio: fare un plot RGB sui diversi anni
 im.plotRGB(stackg, r=1, g=2, b=3)
 
 
