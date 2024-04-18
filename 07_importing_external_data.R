@@ -1,15 +1,17 @@
-# External data
+# Come importare dati esterni in R
 
 library(terra)
 
-# set the working directory based on your path:
-# setwd("youtpath")
-# W***** users: C:\\path\Downloads -> C://path/Downloads
-# My own:
-setwd("~/Downloads")
-naja <- rast("najafiraq_etm_2003140_lrg.jpg")  # like in im.import()
+# Setto la "working directory", da dove vado a prendere i dati
+# setwd("indirizzocartella")
+# Windows: C:\\path\Downloads -> C://path/Downloads
+setwd("C://Users/cucap/Downloads")
 
-plotRGB(naja, r=1, g=2, b=3) # im-plotRGB
+# Carico l'immagine
+eclissi <- rast("eclissi.png")  # rast() come in im.import()
+
+# Su "terra" uso direttamente la funzione plotRGB(nomeimmagine, r=1, g=2, b=3)
+plotRGB(eclissi, r=1, g=2, b=3) # come im.plotRGB
 
 # Exercise: Download the second image from the same site and import it in R
 najaaug <- rast("najafiraq_oli_2023219_lrg.jpg")
