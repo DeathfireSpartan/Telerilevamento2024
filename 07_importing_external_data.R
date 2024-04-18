@@ -36,7 +36,16 @@ par(mfrow=c(2,1))
 plotRGB(naja, r=1, g=2, b=3) # im-plotRGB
 plotRGB(najaaug, r=1, g=2, b=3)
 
-# 
+# Carico un'immagine da Copernicus
+soil <- rast("c_gls_SSM1km_202403280000_CEURO_S1CSAR_V1.2.1.nc")
+plot(soil[[1]]) # plotto il primo livello
+
+# Croppo i dati
+# crop --> ritagliare l'immagine
+ext <- c(25, 35, 58, 62) # descrivo l'estensione che voglio, indico l'intervallo di latitudine e longitudine
+# Essenzialmente gli dico che area ritagliare
+soilcrop <- crop(soil, ext)
+plot(soilcrop[[1]])
 
 # multitemporal change detection
 najadif = naja[[1]] - najaaug[[1]] 
