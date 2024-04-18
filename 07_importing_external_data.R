@@ -13,9 +13,19 @@ eclissi <- rast("eclissi.png")  # rast() come in im.import()
 # Su "terra" uso direttamente la funzione plotRGB(nomeimmagine, r=1, g=2, b=3)
 plotRGB(eclissi, r=1, g=2, b=3) # come im.plotRGB
 
-# Exercise: Download the second image from the same site and import it in R
-najaaug <- rast("najafiraq_oli_2023219_lrg.jpg")
-plotRGB(najaaug, r=1, g=2, b=3)
+# Metodi differenti di plot
+# L'immagine potrebbe apparire leggermente diversa a causa dello stretch
+par(mfrow=c(1,2))
+plotRGB(eclissi, r=1, g=2, b=3)
+im.plotRGB(eclissi, r=1, g=2, b=3)
+
+# Differenziazione delle bande
+diff = eclissi[[1]] - eclissi [[2]] # Differenza tra la prima e la seconda banda
+plot(diff)
+
+# Esercizio: Scarica una seconda immagine da un sito a caso e caricala su R
+kha <- rast("Khazix_79.webp")
+plotRGB(kha, r=1, g=2, b=3)
 
 par(mfrow=c(2,1))
 plotRGB(naja, r=1, g=2, b=3) # im-plotRGB
