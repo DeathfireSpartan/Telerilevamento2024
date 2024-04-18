@@ -1,6 +1,11 @@
 # Come importare dati esterni in R
 
+install.packages("ncdf4")
+library(ncdf4) # Neccessario per leggere i file dal satellite Copernicus
+install.packages("RNetCDF")
+library(RNetCDF) # Altro pacchetto perchè a Francesco non andava il precedente
 library(terra)
+library(imageRy)
 
 # Setto la "working directory", da dove vado a prendere i dati
 # setwd("indirizzocartella")
@@ -30,6 +35,8 @@ plotRGB(kha, r=1, g=2, b=3)
 par(mfrow=c(2,1))
 plotRGB(naja, r=1, g=2, b=3) # im-plotRGB
 plotRGB(najaaug, r=1, g=2, b=3)
+
+# 
 
 # multitemporal change detection
 najadif = naja[[1]] - najaaug[[1]] 
