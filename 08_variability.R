@@ -29,12 +29,17 @@ im.plotRGB(sent, r=2, g=1, b=3)
 # Associo ad una variabile l'elemento 1 (associo la banda 1 ad un oggetto)
 nir <- sent[[1]]
 # Creo la palette di colori e plotto l'immagine
-cl <- colorRampPalette(c("black", "blue", "green", "yellow"))(4)
+cl <- colorRampPalette(c("red", "orange", "yellow"))(100)
 plot(nir, col=cl)
 
+# Funzione "focal(nomeimmagine, matrix(1/9, 3, 3), fun=sd )", estrae delle statistiche focali da un gruppo di valori --> fa il calcolo della deviazione standard nella finestra di pixel da noi indicata
+# matrix(1, 2, 3) --> crea una matrice, cioè la mia finestra di calcolco --> moving window
+# Il primo valore , il secondo e il terzo mi indicano rispettivamente le righe e le colonne della matrice
+# fun=sd --> indico che la funzione che voglio utulizzare è la deviazione standard
 sd3 <- focal(nir, matrix(1/9, 3, 3), fun=sd)
 plot(sd3)
 
+# Pacchetto che mi permette di usare le palettes per i daltonici
 viridisc <- colorRampPalette(viridis(7))(256)
 plot(sd3, col=viridisc)
 
