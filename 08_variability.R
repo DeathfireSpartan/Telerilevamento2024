@@ -34,7 +34,7 @@ plot(nir, col=cl)
 
 # Funzione "focal(nomeimmagine, matrix(1/9, 3, 3), fun=sd )", estrae delle statistiche focali da un gruppo di valori --> fa il calcolo della deviazione standard nella finestra di pixel da noi indicata
 # matrix(1, 2, 3) --> crea una matrice, cioè la mia finestra di calcolco --> moving window
-# Il primo valore , il secondo e il terzo mi indicano rispettivamente le righe e le colonne della matrice
+# Il primo valore definisce l'unità della matrice, il secondo e il terzo mi indicano rispettivamente le righe e le colonne della matrice
 # fun=sd --> indico che la funzione che voglio utulizzare è la deviazione standard
 sd3 <- focal(nir, matrix(1/9, 3, 3), fun=sd)
 plot(sd3)
@@ -43,7 +43,7 @@ plot(sd3)
 viridisc <- colorRampPalette(viridis(7))(256)
 plot(sd3, col=viridisc)
 
-# Standard deviation 7x7
+# Deviazione standard di una matrice 7x7
 sd7 <- focal(nir, matrix(1/49, 7, 7), fun=sd)
 plot(sd7, col=viridisc)
 
