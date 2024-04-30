@@ -1,19 +1,22 @@
-# Measuring variability from satellite imagery
+# Misuro la variabilità di un'immagine satellitare
 
 library(imageRy)
 library(terra)
-# install.packages("viridis")
+# install.packages("viridis") --> per chi soffre di daltonismo
 library(viridis)
 
+# Ancora una volta la lista delle immagini
 im.list()
 
+# Carico l'immagine di Sentinel-2
 sent <- im.import("sentinel.png")
 
+# Plotto l'immagine nelle 3 bande
 im.plotRGB(sent, 1, 2, 3)
 
-# NIR = band 1
-# red = band 2
-# green = band 3
+# NIR = banda 1
+# Rosso = banda 2
+# Verde = banda 3
 
 im.plotRGB(sent, r=2, g=1, b=3)
 
