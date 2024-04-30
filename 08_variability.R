@@ -1,5 +1,4 @@
 # Misuro la variabilità di un'immagine satellitare
-
 library(imageRy)
 library(terra)
 # install.packages("viridis") --> per chi soffre di daltonismo
@@ -47,12 +46,11 @@ plot(sd3, col=viridisc)
 sd7 <- focal(nir, matrix(1/49, 7, 7), fun=sd)
 plot(sd7, col=viridisc)
 
-# stack
-stacksd <- c(sd3, sd7)
-plot(stacksd, col=viridisc)
-
-# Standard deviation 13x13
+# Deviazione standard di una matrice 13x13
 sd13 <- focal(nir, matrix(1/169, 13, 13), fun=sd)
+plot(sd13, col=viridisc)
 
+# Stack delle 3 immagini
 stacksd <- c(sd3, sd7, sd13)
 plot(stacksd, col=viridisc)
+
