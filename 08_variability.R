@@ -18,9 +18,17 @@ im.plotRGB(sent, 1, 2, 3)
 # Rosso = banda 2
 # Verde = banda 3
 
+# Plotto con il NIR sul verde
 im.plotRGB(sent, r=2, g=1, b=3)
 
+# Voglio calcolare la variabilità dell'immagine
+# Metodo "moving window" --> calcolo la deviazione standard di una finestra mobile di 6 pixel e la associo al pixel centrale -->
+# --> poi sposto la finestra di 1 pixel, rifaccio il calcolo e lo associo al nuovo pixel centrale
+# Posso calcolare la variabilità per una singola banda --> devo decidere quale banda (in questo esercizio uso il NIR)
+
+# Associo ad una variabile l'elemento 1 (associo la banda 1 ad un oggetto)
 nir <- sent[[1]]
+# Creo la palette di colori e plotto l'immagine
 cl <- colorRampPalette(c("black", "blue", "green", "yellow"))(4)
 plot(nir, col=cl)
 
