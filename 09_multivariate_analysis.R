@@ -24,6 +24,7 @@ pairs(sentdo)
 
 # PCA
 # Funzione che compatta il set in poche dimensioni
+# Porta un'immagine con tante bande ad una banda sola
 # Restituisce le componenti
 
 # 1. Sample
@@ -45,10 +46,11 @@ pcimage <- im.pca(sentdo)
 tot <- sum(1719.25654,626.98962,54.63642,34.92315)
 1719.25654*100 / tot
 
-viridis <- colorRampPalette(viridis(7))(255)
-plot(pcimage, col=viridis)
+# Plotto l'immagine
+# PC1 è al 70% 
+plot(pcimage, col=viridis(100))
 
-magma <- colorRampPalette(magma(7))(255)
-plot(pcimage, col=magma)
+# Plot con la palette Magma
+plot(pcimage, col=magma(100))
 
 
