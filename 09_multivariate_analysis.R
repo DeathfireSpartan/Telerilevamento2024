@@ -1,4 +1,5 @@
-# how to make multivariate analysis in R with remote sensing data
+# Come fare analisi multivariate in R con dati di remote sensing
+# Immagini iperspettrali con centinaia di bande, spesso non è possibile andare a scegliere la banda singola
 
 library(terra)
 library(imageRy)
