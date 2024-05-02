@@ -3,22 +3,28 @@
 
 library(terra)
 library(imageRy)
-library(viridis) # for the final plot
+library(viridis)
 
 im.list()
 
-b2 <- im.import("sentinel.dolomites.b2.tif")  
-b3 <- im.import("sentinel.dolomites.b3.tif")  
-b4 <- im.import("sentinel.dolomites.b4.tif")  
-b8 <- im.import("sentinel.dolomites.b8.tif")  
+# Importo i dati --> bande del Sentinel-2 delle Dolomiti
+b2 <- im.import("sentinel.dolomites.b2.tif")  # Blu
+b3 <- im.import("sentinel.dolomites.b3.tif")  # Verde
+b4 <- im.import("sentinel.dolomites.b4.tif")  # Rosso
+b8 <- im.import("sentinel.dolomites.b8.tif")  # NIR
 
+# Stack delle immagini delle Dolomiti
 sentdo <- c(b2, b3, b4, b8)
 
-im.plotRGB(sentdo, 4, 3, 2)
+# Plotto lo stack, NIR sul verde
+im.plotRGB(sentdo, 3, 4, 2)
 
+# Calcolo le correlazioni tra le dati (bande), usando l'indice di Pearson (1 = correlazione positiva, -1 = correlazione negativa)
 pairs(sentdo)
 
 # PCA
+# Funzione che compatta il set in poche dimensioni
+# Restituisce le componenti
 
 # 1. Sample
 # sample <- spatSample(sentdo, 100)
