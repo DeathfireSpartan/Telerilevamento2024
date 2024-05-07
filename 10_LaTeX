@@ -20,7 +20,12 @@
 
 % \usepackage{hyperref} --> Funzione che aggiunge degli hyperlink nell'indice che reindirizzano ai vari capitoli
 
-
+% \begin{equation} e \end{equation} --> Permette di creare un'equazione 
+% PM = \sqrt[3]{\frac{Meloni_1 \times Fame_2}{Prosciutto^3}} --> La funzione \frac crea un funzione del tipo a/b 
+% --> _numero Il numero dopo l'underscore lo rende un pedice 
+% --> ^numero Il cappellino trasforma il numero in un apice
+% \times --> Aggiunge il simbolo della moltiplicazione
+% \sqrt[numero] --> Mette tutto sotto una radice quadrata (se non c'è la prentesi quadra), se voglio fare una radice cubica devo scrivere il 3 all'interno delle parentesi quadre
 
 
 
