@@ -26,6 +26,10 @@
 % --> ^numero Il cappellino trasforma il numero in un apice
 % \times --> Aggiunge il simbolo della moltiplicazione
 % \sqrt[numero] --> Mette tutto sotto una radice quadrata (se non c'è la prentesi quadra), se voglio fare una radice cubica devo scrivere il 3 all'interno delle parentesi quadre
+% \sum P_i --> Simbolo della sommatoria per la variabile P_i
+
+% \label{eq:prosciuttomelone} --> Crea una label/etichetta in cui indico a che tipo di oggetto fa riferimento
+% \ref{label} --> Va a richiamare la "label" nel testo e se uso il pacchetto hyperref crea anche un link direttamente alla funzione
 
 
 
