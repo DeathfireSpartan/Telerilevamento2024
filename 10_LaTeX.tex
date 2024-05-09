@@ -3,7 +3,6 @@
 
 % \documentclass{nometemplate} --> Indica il tipo di documento che andremo a creare --> template di base
 % \usepackage{nomepacchetto} --> Una funzione per aggiungere pacchetti aggiuntivi a LaTeX 
-% \usepackage{hyperref} --> Aggiunge link ipertestuali
 % \usepackage{natbib} --> Serve per la bibliografia
 
 % \title{Il mio primo documento in LaTeX} --> Titolo del documento
@@ -74,6 +73,25 @@
     \item Godzilla is best
     \item Kong feccia
 \end{itemize}
+
+% Note a piè di pagina
+Shishkebab is the best kebab
+\footnote{Source: La mia intelligenza}
+
+% Numeri di riga (da mettere in cima al codice)
+\usepackage{lineno} % Aggiunge i numeri di riga
+\linenumbers
+
+% Impaginazione --> https://it.overleaf.com/learn/latex/Multiple_columns
+% \bigskip --> Lascia più spazio tra una riga e l'altra
+% \smallskip --> Lascia un poco di più di spazio tra una riga e l'altra
+% \\ --> Equivale ad un \bigskip
+
+% Abstract --> va aggiunto, di solito, subito dopo il titolo
+\begin{abstract}
+    Questo è l'abstract di questa tesi, che schifo.
+\end{abstract}
+
 
 % [] for structures!
 
