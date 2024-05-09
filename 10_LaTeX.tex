@@ -3,6 +3,8 @@
 
 % \documentclass{nometemplate} --> Indica il tipo di documento che andremo a creare --> template di base
 % \usepackage{nomepacchetto} --> Una funzione per aggiungere pacchetti aggiuntivi a LaTeX 
+% \usepackage{hyperref} --> Aggiunge link ipertestuali
+% \usepackage{natbib} --> Serve per la bibliografia
 
 % \title{Il mio primo documento in LaTeX} --> Titolo del documento
 % \author{Luca Telloli} --> Autore del documento
@@ -10,7 +12,7 @@
 % se \date è mancante Overleaf va a prendere la data dal computer
 
 % \begin{document} e \end{document} --> Da usare in tandem per iniziare e finire il documento
-% \maketitle --> Copia tutta la parte iniziale del documento, cioè l'Header
+% \maketitle --> Copia tutta la parte iniziale del documento, cioè l'Header. La si può utilizzare per richiamare l'Header
 % \section{Introduction} --> Funge da inizio paragrafo e numera il titolo
 % \section*{Introduction} --> L'asterisco NON fa mettere il numero
 % \subsection{nomeparagrafo} --> Crea un sottoparagrafo già numerato
@@ -33,11 +35,45 @@
 % \ref{label} --> Va a richiamare la "label" nel testo e se uso il pacchetto hyperref crea anche un link direttamente alla funzione
 % Referenze sbagliate nel documento sono indicati da due punti interrogativi --> ??
 
+% \textbf {} --> Il testo dentro le parentesi diventa in grassetto
+% \textit {} --> Il testo dentro le parentesi diventa in corsivo
+% \url{} --> Inserisce il link indicato tra parentesi nel testo
+% \newpage --> crea una nuova pagina
+% Come inserire un'immagine
+\begin{figure}
+    \centering % Serve a centrare la figura nel testo
+    \includegraphics[width=\textwidth]{GBmj2TCboAA9nmg.png} % Aggiunge l'immegine, [] quello che c'è dentro le parentesi quadre serve a modificare le caratteristiche dell'immagine
+    % \textwidth --> Funzione per ottenere la grandezza del testo automaticamente
+    \caption{You killed my entire platoon!}
+    \label{fig:minus_one}
+\end{figure}
+
+% Come fare la bibliografia
+% \bibitem[Banane,2024]{Banane2024} --> Aggiunge una citazione bibliografica nel database. {} Quello che c'è nelle parentesi graffe funge da Etichetta. [] Quello che c'è tra parentesi quadre è quello che apparirà nel testo (quando andiamo a citare la bibliografia)
+% \cite{Banane2024} --> Aggiunge una citazione bibliografica al testo. Tra le parentesi graffe inseriamo l'Etichetta e come risultato otteniamo quello che abbiamo messo nelle parentesi quadre della funzione \bibitem
+% \citet{} --> 
+% \citep{} --> 
+\begin{thebibliography}{999}
+    \bibitem[Zuckerman,2024]{Zuckerman2024}
+    Zuckerman, E. (2024). ‘Godzilla Minus One’Stomps Into ‘Oppenheimer’Territory. The New York Times (Digital Edition), NA-NA.
+    \bibitem[Rubsam,2024]{Rubsam2024}
+    Rubsam, R. (2024). The Newest ‘Godzilla’Film Is Stranger Than Fiction. The New York Times (Digital Edition), NA-NA.
+\end{thebibliography}
 
 
+% Elenchi puntati
+\begin{itemize}
+    \item Atomic breath is important % Aggiunge un punto all'elenco puntato (non c'è bisogno delle parentesi per aggiungere testo)
+    \item Godzilla is best
+    \item Kong feccia
+\end{itemize}
 
-
-
+% Elenchi numerati
+\begin{itemize}
+    \item Atomic breath is important % Aggiunge un punto all'elenco puntato (non c'è bisogno delle parentesi per aggiungere testo)
+    \item Godzilla is best
+    \item Kong feccia
+\end{itemize}
 
 % [] for structures!
 
