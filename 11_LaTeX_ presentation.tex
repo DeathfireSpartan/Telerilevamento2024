@@ -1,204 +1,111 @@
-\documentclass{beamer}
-\usepackage{listings}
-% 
-\usetheme{Warsaw} % Frankfurt | Warsaw
-\usecolortheme{dove} %crane  dove dolphin beaver dove
-% % block styles
-\setbeamertemplate{blocks}[rounded][shadow=true]
-% 
-% plot(inputtable)
+% In LaTeX le funzioni iniziano con \ e sono contenute all'interno di parentesi graffe {}
 
-\title{Choose your preferred title}
- \subtitle{beamer}
- \author{Duccio Rocchini, The PhD students}
- \institute{
- Alma Mater Studiorum UniBO\\
- \bigskip
- \includegraphics[width=0.3\textwidth]{satellite2.jpeg}
- }
+
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{lineno}
+\linenumbers
+
+\title{Il mio primo documento in LaTeX}
+\author{Luca Telloli}
+\date{07 Maggio 2024} 
 
 \begin{document}
+
 \maketitle
 
-\AtBeginSection[] % Do nothing for \section*
-{
-\begin{frame}{Outline}
-\tableofcontents[currentsection]
-\end{frame}
-}
+\begin{abstract}
+    Questo è l'abstract di questa tesi, che schifo.
+\end{abstract}
+
+\textit{Keywords}: Godzilla, banane
+
+\tableofcontents
 
 \section{Introduction}
 
-\begin{frame}{My very first slide in LaTeX: hoorray!!}
-    \texttt{My first text here!!}
-\end{frame}
 
-\begin{frame}{My very first slide in LaTeX: hoorray!!}
-    \scriptsize{My first text here!!}
-\end{frame}
+\label{sec:intro}
+Io ne ho viste cose che voi umani non potreste immaginarvi:
+navi da combattimento in fiamme al largo dei bastioni di Orione,
+e ho visto i raggi B balenare nel buio vicino alle porte di Tannhäuser.
+E tutti quei momenti andranno perduti nel tempo,
+come lacrime nella pioggia \cite{Zuckerman2024}
 
-\begin{frame}{My very first slide in LaTeX: hoorray!!}
-    \tiny{My first text here!!}
-\end{frame}
-
-
-
-\begin{frame}{My very first slide in LaTeX: hoorray!!}
-    My first text here!! \\
-    Here write the second sentence. \\
-    Third sentence here.
-\end{frame}
+Io ne ho viste cose che voi umani non potreste immaginarvi:
+navi da combattimento in fiamme al largo dei bastioni di Orione,
+e ho visto i raggi B balenare nel buio vicino alle porte di Tannhäuser.
+E tutti quei momenti andranno perduti nel tempo,
+come lacrime nella pioggia \cite{Rubsam2024}
+\footnote{Blade runner}
 
 
-\begin{frame}{My very first slide in LaTeX: hoorray!!}
-    My first text here!! \\
-    \bigskip
-    Here write the second sentence. \\
-    \bigskip
-    Third sentence here.
-\end{frame}
-
-\subsection{Itemizing}
-
-\begin{frame}
- \frametitle{Itemizing}
- \begin{itemize}
-  \item Remote sensing is a powerful tool
-  \item It can be used for diversity estimate
-  \item It can be used in ecological informatics
- \end{itemize}
-\end{frame}
-
-
-\begin{frame}
- \frametitle{Itemizing}
- \begin{itemize}
-  \item<1> Remote sensing is a powerful tool
-  \item<2> It can be used for diversity estimate
-  \item<3> It can be used in ecological informatics
- \end{itemize}
-\end{frame}
-
-\begin{frame}
- \frametitle{Itemizing}
- \begin{itemize}
-  \item<1-> Remote sensing is a powerful tool
-  \item<2-> It can be used for diversity estimate
-  \item<3-> It can be used in ecological informatics
- \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}{Itemizing}
-\begin{itemize}
-    \item first item
-    \item second item: I love ecology
-    \item I love Biol Geol Env Sci
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Itemizing}
-\begin{itemize}
-\tiny{
-    \item<1-> first item
-    \item<2-> second item: I love ecology
-    \item<3-> love Biol Geol Env Sci
-}
-\end{itemize}
-\end{frame}
-
-\section{Figures}
-\begin{frame}{Adding a figure}
-\centering
- \includegraphics[width=0.9\textwidth]{satellite2.jpeg}
-\end{frame}
-
-\begin{frame}{Adding a figure}
-\centering
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
-\end{frame}
-
-\begin{frame}{Adding a figure}
-\centering
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
-  \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
-\end{frame}
-
-\begin{frame}{Adding a figure}
-\centering
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
- \bigskip
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
-  \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
-\end{frame}
-
-
-\begin{frame}{Adding a figure}
-\centering
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
- \smallskip
- \includegraphics[width=0.4\textwidth]{satellite2.jpeg}
-  \includegraphics[width=0.4\textwidth]{satellite2.jpeg}\\
-\end{frame}
-
-\section{Formulas}
-
-
-\begin{frame}{Formulaaaaaaaas!}
-    \begin{equation}
-        H' = - \sum_{i=1}^{N} p_i \times \log{p_i}
-    \end{equation}
-\end{frame}
-
-\begin{frame}{More difficult formulas...}
-Let's experience the easiness of writing difficult formulas:
+\section{Banane}
+In questa tesi facciamo uso dell'equazione \ref{eq:prosciuttomelone} e \ref{eq:sommativa}:
 \begin{equation}
-K_{\alpha}=\frac{1}{\left( \sum_{i=1}^{N} p_i \times p_i^{\alpha-1} \right)^{\frac{1}{\alpha-1}}} 
+    PM = \sqrt[3]{\frac{Meloni_1 \times Fame_2}{Prosciutto^3}}
+    \label{eq:prosciuttomelone}
 \end{equation}
+
+\begin{equation}
+    \sum P_i
+    \label{eq:sommativa}
+\end{equation}
+
+\section{Godzilla}
+\subsection{La vita}
+I nostri risultati sono in linea con precedenti pubblicazioni, introdotte nel paragrafo \ref{sec:intro}.
+
+In questa tesi discuteremo della bellezza di Godzilla Minus One, esposto in Figura  \ref{fig:minus_one}.
+
+\subsection{La morte}
+\begin{itemize}
+    \item Atomic breath is important
+    \item Godzilla is best
+    \item Kong feccia
+\end{itemize}
+Morto a causa del Distruttore di Ossigeno
+\subsection{Il ritorno}
+Torna in base alla continuity
+
+
+\newpage
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{GBmj2TCboAA9nmg.png}
+    \caption{You killed my entire platoon!}
+    \label{fig:minus_one}
+\end{figure}
+
+\section{BananeBanane}
+
+Tutti i dati usati in questa tesi sono reperibili a: 
+\url{www.nasa.gov.edu}
+
+Shishkebab is the best kebab
+\footnote{Source: La mia intelligenza}
+
+\begin{thebibliography}{999}
+    \bibitem[Zuckerman,2024]{Zuckerman2024}
+    Zuckerman, E. (2024). ‘Godzilla Minus One’Stomps Into ‘Oppenheimer’Territory. The New York Times (Digital Edition), NA-NA.
+    \bibitem[Rubsam,2024]{Rubsam2024}
+    Rubsam, R. (2024). The Newest ‘Godzilla’Film Is Stranger Than Fiction. The New York Times (Digital Edition), NA-NA.
+\hline
+\bigskip
+\textbf{Box 1 - Godzilla}
+\bigskip
+\begin{itemize}
+    \item Godizlllaaaaa
+    \item Fammi un panino
+\end{itemize}
+\bigskip
+\hline
+\end{thebibliography}
+
+\end{document}
+
 \end{frame}
 
-
-\begin{frame}{Formulaaaaaaaas!}
-Bla bla bla I love formulas, especially into my sentences
-$H' = - \sum_{i=1}^{N} p_i \times \log{p_i}$ and blablabla again
-\end{frame}
-
-\begin{frame}{More info on formulas...}
-\url{https://en.wikibooks.org/wiki/LaTeX/Mathematics}
-\end{frame}
-
-\begin{frame}{Formulas that no other software can do!}
-    \begin{equation}
-    M_d=
-    \begin{pmatrix}
-    d_{\lambda_1,\lambda_1} & d_{\lambda_1,\lambda_2} & d_{\lambda_1,\lambda_3} & \cdots & d_{\lambda_1,\lambda_n} \\
-    d_{\lambda_2,\lambda_1} & d_{\lambda_2,\lambda_2} & d_{\lambda_2,\lambda_3} & \cdots & d_{\lambda_2,\lambda_n} \\
-    d_{\lambda_3,\lambda_1} & d_{\lambda_3,\lambda_2} & d_{\lambda_3,\lambda_3} & \cdots & d_{\lambda_3,\lambda_n} \\
-    \vdots  & \vdots  & \vdots  & \ddots & \vdots  \\
-    d_{\lambda_n,\lambda_1} & d_{\lambda_n,\lambda_2} & d_{\lambda_n,\lambda_3} & \cdots & d_{\lambda_n,\lambda_n}
-    \end{pmatrix}
-    \end{equation}
-\end{frame}
-
-\begin{frame}{The code!}
-    \lstinputlisting[language=R]{list2.r}
-\end{frame}
-
-\begin{frame}{The code!}
-    \lstinputlisting[language=R]{list2.r} \\
-    \bigskip
-    This is the function of R we are using, where:
-    \begin{itemize}
-        \item x = input file...
-        \item $\alpha$ = blablabla
-    \end{itemize}
-\end{frame}
-
-
- \end{document}
+\end{document}
