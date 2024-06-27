@@ -18,7 +18,6 @@ par(mfrow=c(2,1))
 im.plotRGB.auto(EN01)
 im.plotRGB.auto(EN13)
 
-# using the first element (band) of images
 # Vado ad osservare la differenza tra le due immagini rispetto ad un layer specifico --> in questo caso la prima banda
 difEN = EN01[[1]] - EN13[[1]]
 
