@@ -32,10 +32,6 @@ plot(diff)
 kha <- rast("Khazix_79.webp")
 plotRGB(kha, r=1, g=2, b=3)
 
-par(mfrow=c(2,1))
-plotRGB(naja, r=1, g=2, b=3) # im-plotRGB
-plotRGB(najaaug, r=1, g=2, b=3)
-
 # Carico un'immagine da Copernicus
 soil <- rast("c_gls_SSM1km_202403280000_CEURO_S1CSAR_V1.2.1.nc")
 plot(soil[[1]]) # plotto il primo livello
@@ -46,22 +42,3 @@ ext <- c(25, 35, 58, 62) # descrivo l'estensione che voglio, indico l'intervallo
 # Essenzialmente gli dico che area ritagliare
 soilcrop <- crop(soil, ext)
 plot(soilcrop[[1]])
-
-# multitemporal change detection
-najadif = naja[[1]] - najaaug[[1]] 
-cl <- colorRampPalette(c("brown", "grey", "orange")) (100)
-plot(najadif, col=cl)
-
-# Download your own preferred image:
-typhoon <- rast("mawar_vir2_2023144_lrg.jpg")
-
-plotRGB(typhoon, r=1, g=2, b=3)
-plotRGB(typhoon, r=2, g=1, b=3)
-plotRGB(typhoon, r=3, g=2, b=1)
-
-
-# The Mato Grosso image can be downloaded directly from EO-NASA:
-
-mato <- rast("matogrosso_l5_1992219_lrg.jpg")
-plotRGB(mato, r=1, g=2, b=3) 
-plotRGB(mato, r=2, g=1, b=3) 
