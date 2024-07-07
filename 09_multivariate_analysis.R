@@ -19,7 +19,7 @@ sentdo <- c(b2, b3, b4, b8)
 # Plotto lo stack, NIR sul verde
 im.plotRGB(sentdo, 3, 4, 2)
 
-# Calcolo le correlazioni tra le dati (bande), usando l'indice di Pearson (1 = correlazione positiva, -1 = correlazione negativa)
+# Calcolo le correlazioni tra i dati (bande), usando l'indice di Pearson (1 = correlazione positiva, -1 = correlazione negativa)
 pairs(sentdo)
 
 # PCA
